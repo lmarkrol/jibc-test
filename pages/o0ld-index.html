@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combined HTML</title>
+    
+    <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .slideshow-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: rgb(255, 255, 255);
+    }
+
+    .slideshow-container img {
+      display: none;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transition: opacity 1.2s ease-in-out;
+    }
+
+    .slideshow-container img.active {
+      display: block;
+      animation-name: fade;
+      animation-duration: 2s;
+    }
+
+    @keyframes fade {
+      0% {
+        opacity: .2;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    /* Styles for desktop */
+    @media (min-width: 768px) {
+      .dot-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: 50px;
+        left: 0;
+        right: 0;
+        z-index: 1;
+      }
+
+      .dot {
+        width: 25px;
+        height: 8px;
+        border-radius: 25%;
+        background-color: #bbb;
+        margin: 0 5px;
+        cursor: pointer;
+        opacity: 0.5;
+      }
+
+      .dot.active {
+        background-color: #ffffff;
+        opacity: 1;
+      }
+    }
+
+    /* Styles for mobile */
+    @media (max-width: 767px) {
+      .dot-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 20%;
+        left: 0;
+        right: 0;
+        z-index: 1;
+      }
+
+      .dot {
+        width: 20px;
+        height: 6px;
+        border-radius: 25%;
+        background-color: #bbb;
+        margin: 0 5px;
+        cursor: pointer;
+        opacity: 0.5;
+      }
+
+      .dot.active {
+        background-color: #ffffff;
+        opacity: 1;
+      }
+
+      .slideshow-container img {
+        display: none;
+        width: 100%;
+        height: 25%;
+      }
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+    }
+
+    .image {
+      flex: 1;
+      max-width: 50%;
+      text-align: center;
+    }
+
+    .image img {
+      border-radius: 10px;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .description {
+      flex: 1;
+      padding: 20px;
+      text-align: justify;
+      font-size: larger;
+    }
+
+    @media (min-width: 600px) {
+      .container {                    
+        margin-right: 100px;
+        margin-left: 100px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .image {
+        max-width: 100%;
+      }
+
+      .description {
+        padding: 10px;
+      }
+    }
+    </style>
+</head>
+<body>
+  <div class="slideshow-container">  
+    <div class="dot-container"></div>  
+  </div>
+
+  <div class="container">
+    <div class="image">
+      <img src="https://lh3.googleusercontent.com/fife/AKsag4POHjMdGhCE5bsuGOOETjjMdf3q4M3PxV3Y99Nk7PF5-S8GHA1yhCGATKh_i5Ti3ayclWTu-Oo7N1AQo3Mq07W5ovhvgDY84Bi81ihfVIvtIsI8SQhXD425dYe6svGaN7RKK3aUcnwJXXMjdu1DoY7FiR8m31bKUGUZbEwLwEqYzLOD9Fl2LkYuJm4LlfMmB7jaRl8_0Clali8bJ1XDofMsRj6AYk0HrkCxn5YwVEIrLaQuaNJRzP1qw0qoBWUcGqFFXhV2hpIGu2I0yFe1VmCfchk4NlVntiyHa_AEHEtXlFE-Km0n__vIp5iMR-OIp7Lv7QCXMoclxvAWkLpk89LR-dpO5FUK20wNc8CvMrZCQ3GA7I6brnWp1Gow8lv_dQFF9kpHcdrLVSS-NPXK3N_Q50wZKJ5vGJqGpIDZrOyG3AuMag8lQnE-3YmIDXc8GiXi3_wBuK2T8wwVDAU09Ab5hF3RoEwKNJN5zi2qDUBeT1UDjnDOi09JpjMhoXe9MLjbRczjaLStmdqAB0nm1RFY_-4_av880sM3LKW-vNmtqDRhthQE9-xW5xE19D9cQ5mitxJGJULpJHx5TmScJSdcOHf76OP9nHgAQrfX3FGZ7ir4xEqqiXqOWQQVTzRd_ZGtJV0HT5e9QJb4AEGhg9KnZGV8WPWZjAKLcz3_d9_oVab7JXC7miWgu_ZBIRzjmngUTXDIl5heucbOp_M6h2WtttlR8wRBYnfavh88L8feWLK9FwcB_QCO-L8yI8kDw8FxDphxYNAtSqlMTKc95jImmkvJmDiwJklKOWWH7Wa1_nhWkR1aGCtRtZJ3GTZE2_jGh9bFCuOEu6XcDAmvuYWa9yM1MZPZKBPYTsGVt-02iAPP9hrxzpvQ3QXOcg_iH2P3Is8iQPM7DW-bbDTJn3AiPfe9Rtqait0kDejQCrKobX3o5cUHy2pWvylL3qspNiCrk4zCECJTmPAv2_EZ_8thOGjDETis8BzOq2ymPH1mfIcrUPmCl0kez5CwsjT5gynINdqkqpU11VBZDFdmrvYEqvBs7vSEJnQ9pKmwYtoNpBXwdaG06pHdu5k5ITVsP793lhlka2X7HZrwISjq56yFercI1cpTUhdlGFN2GdoZozrLkqsbLdik5DsS1KfrQphYy2WA-WGO78PORWi1BBBfd5cniEBITuXGjH9opJtCDHJw5EBE5NEzW9MDOJao18Rvk_IBXrv-Q5pLRGlT37VtX8JOhuTPuUcdYxcN-lZvP0PLnJ6pZ8OFfX16fmXM7_UOLLghov1A-cocU6AoLpNKl6YeKalsTuAa6zks4m4m9_T0vmO8OZyFItGCjMKwShoq5Jt8hex-87Bv_ajUODr6G7FrAGG-ufVX22RMYXYeCdDcm4hM-ajTKgvSu1sjDMBQDKjbdaNuJ906jS4YARo2fPGs33pl1qkzInWyKSzsPJfHqyn9lofUlKGZEffgmpGQT07My7nyMNhPNQvUbfO1CgfMB3vf97rV3RBIQITR_S0HofaswpZ-jlPFJgqt2BIUbZSY7fIIba4FA-72oKGxdXCkPF2cVaIcWoNcPY8r6xp4PnDhL9iM7jbQFeoF_eAK25T0QeJaTqOnB_Kw2tvFvee=w1920-h947" 
+           alt="Image Description"
+           width="500px" height="400px"
+      >
+    </div>
+    <div class="description">
+      <div>
+        <h2>Welcome to JIBC</h2>
+        <p>As we come together to worship Christ, we do so as a community of believers across space and time carrying on the praise of the One who has given us life, by sacrificing His own. We are glad you are here with us at Jakarta International Baptist Church (JIBC).</p>
+        <p>Our purpose is to <b>glorify GOD</b></p>
+        <p><b>upwardly</b> through <b>worship</b></p>
+        <p><b>inwardly</b> through <b>discipleship</b></p>
+        <p><b>outwardly</b> through <b>evangelism</b></p>
+        <p><i>The Lord bless you and keep you; the Lord make His face shine on you and be gracious to you; the Lord turn His face toward you and give you peace.
+        <br><b>(Numbers 6:24-26)</b></i></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Include the Firebase JavaScript SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js"></script>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+    import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+    apiKey: "AIzaSyCM8SGcpuAb91X5pkK-S6HhXXtsakvhggQ",
+    authDomain: "jibc-db.firebaseapp.com",
+    projectId: "jibc-db",
+    storageBucket: "jibc-db.appspot.com",
+    messagingSenderId: "715748832720",
+    appId: "1:715748832720:web:651fb692f3f4d17e8675d5",
+    measurementId: "G-C0XMQPZCCG"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    const bannerContainer = document.querySelector(".slideshow-container");
+    const dotContainer = document.querySelector(".dot-container");
+
+    async function fetchBannerData() {
+      const querySnapshot = await getDocs(collection(db, "banner"));
+
+      querySnapshot.forEach((doc) => {
+        const data = doc.data();
+        const image = document.createElement("img");
+        image.src = data.picture;
+        image.alt = "Banner Image";
+        image.addEventListener("click", () => {
+          // window.open(data.link, "_blank"); BANNER CLICK OPEN NEW TAB IS DISABLE
+        });
+        bannerContainer.appendChild(image);
+
+        const dot = document.createElement("span");
+        dot.classList.add("dot");
+        dotContainer.appendChild(dot);
+
+        dot.addEventListener("click", () => {
+          showBannerImage(dot);
+        });
+      });
+
+      const images = document.querySelectorAll(".slideshow-container img");
+      const dots = document.querySelectorAll(".dot-container .dot");
+      images[0].classList.add("active");
+      dots[0].classList.add("active");
+      setInterval(showNextImage, 3000);
+    }
+
+
+    function showBannerImage(dot) {
+      const dots = document.querySelectorAll(".dot-container .dot");
+      const images = document.querySelectorAll(".slideshow-container img");
+
+      dots.forEach((dotItem, index) => {
+        if (dot === dotItem) {
+          dotItem.classList.add("active");
+          images[index].classList.add("active");
+        } else {
+          dotItem.classList.remove("active");
+          images[index].classList.remove("active");
+        }
+      });
+    }
+
+    function showNextImage() {
+      const dots = document.querySelectorAll(".dot-container .dot");
+      const images = document.querySelectorAll(".slideshow-container img");
+
+      let currentIndex = -1;
+      images.forEach((image, index) => {
+        if (image.classList.contains("active")) {
+          currentIndex = index;
+          image.classList.remove("active");
+          dots[index].classList.remove("active");
+        }
+      });
+
+      if (currentIndex !== -1) {
+        const nextIndex = (currentIndex + 1) % images.length;
+        images[nextIndex].classList.add("active");
+        dots[nextIndex].classList.add("active");
+      }
+    }
+
+    fetchBannerData();
+
+</script>
+
+</body>
+</html>

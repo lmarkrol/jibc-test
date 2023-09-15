@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <style>
+        * {
+          box-sizing: border-box;
+        }
+        body {
+          font-family: Verdana, sans-serif;
+        }
+        .mySlides {display: none;
+        }
+        img {
+          vertical-align: middle;
+          /* border-radius: 40px; */
+        }
+        
+        /* Slideshow container */
+        .slideshow-container {
+          width: 100vw; /* Set container width to viewport width */
+          height: 100vh;
+          position: relative;
+          overflow: hidden;
+        }
+        
+        .mySlides {
+          /* display: none; */
+          width: 100vw; /* Set slide width to viewport width */
+          height: 100vh;
+        }
+        
+        /* Caption text */
+        .text {
+          color: #f2f2f2;
+          font-size: 15px;
+          padding: 8px 12px;
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          margin-bottom: 10%;
+          width: 100%;
+          text-align: center;
+        }
+        
+        /* Number text (1/3 etc) */
+        .numbertext {
+          color: #f2f2f2;
+          font-size: 12px;
+          padding: 8px 12px;
+          position: absolute;
+          top: 0;
+        }
+        
+        /* The dots/bullets/indicators */
+        .dot {
+          height: 15px;
+          width: 15px;
+          margin: 0 2px;
+          background-color: #bbb;
+          border-radius: 50%;
+          display: inline-block;
+          transition: background-color 0.6s ease;
+        }
+        
+        .active {
+          background-color: #717171;
+        }
+        
+        /* Fading animation */
+        .fade {
+          animation-name: fade;
+          animation-duration: 1.5s;
+        }
+        
+        @keyframes fade {
+          from {opacity: .4} 
+          to {opacity: 1}
+        }
+        
+        /* On smaller screens, decrease text size */
+        @media only screen and (max-width: 300px) {
+          .text {font-size: 11px}
+        }
+        </style>
+        </head>
+        <body>
+        
+        <!-- <h2>Automatic Slideshow</h2>
+        <p>Change image every 2 seconds:</p> -->
+        
+        <div class="slideshow-container">
+        
+        <div class="mySlides fade">
+        <!--   <div class="numbertext">1 / 3</div> -->
+          <img src="https://lh3.googleusercontent.com/fife/AKsag4OIDOFVOUKSHEksEY381FqRYCGH00EWrJNo8Au3pV_8qHKrCn0LDDr3COQsVdJkzVJZy9xo-bCcvgpUKGVBZG_QUJ0u--2fAWWUX-V2580nNvILJy0-STxw5iHGPIy_wPCW978vwXTtt9vZIMzD7k8jwXiaxj_zcsbdrhAvqtvPNeQmig-1I7JqFXp7acUEV7V1hN1qBM85nwgmrhlxmbdAtFnwTMpPZeNCuwLGp42eu_UnEqVaeItw-J3yIJ8Xp-8rR9QyVyD-X20yROBCaJX3_qnawogV0HY-7ygwULKy1xOXlTa_Xqfnwog_2ofvxiew4LcJxpI22S4F2Pb1DTc_m7eNr-pfsrTnVh6nqu1CjLNK_TUKCq05GWI2fJUYuBAokUQ92rDly7mJpcs1qTVLL4XdxCjalW-ENRvUZibnVMIQrsVdUGxKCCh64nGIQzd2H8DdeS7Ls841Q7W7Hb0b03OQAsVPTp1FZsPgLUMt28DXTs9PXnoPoYTRCINAKmKguR1R-JRgIkxmO0uknUAYI_zQ1l4hXozzjRTlQSlNQhz48WG4F0Y9dfqNeIkmysA5MBmchrQWka7EG_0KjaJshyb_rP-32THZJpQDDUutKiMQ6-o_ir_xaqThisRgA8ZnUM-ENyqTl_T0hlr2uGOkqpJXijXSIkbRFhtHmJ5TLaEAeCsPXa4xR08mqFKDTdwO1EBS3r51tWq8H_X3d3IeSikGhIv8EXpBBewRfWrBNissqxqDQJ84wtm2W6NPI8nc5yWaDRmQ6a1zkK1_sLf2nds9cONqQUCDWnjagnyOVl0qeTLIdnR8SitZhAzjIRD_YprGd8oekVK7Qg1wJQutIM2w4j5t0pUlmb1NdYvg694pxFU9ybRwPOo0yViDyv4I30LsktbKCtb-d5FSP6y9j4sfGVbvnRgqj7MdQgEALxrazBXavzGfoJiOF1ST0Ac82nkaPEH49nbbfTr-3Od64y876Zd4jF7IvhBLn955CMBYk8yZONOGD9grhz9UjEy-fGXlYzz2als3pN3Q7n2GBPOqkeuiMBWEC0moxIWWJ2YaH4uEk_WStQKATw-caprlzYRFB4x4J_h8qnWqpuoCPq8lb86HCF9yi9gw2iHjleFZpmwEjrVE8MBT360LdUYGs7qyz2SJKXSIHKmHeuKw8tXPhqrrSqXHo0YCrmtjsNz96U8FW-g_7m0lWQpsmGLS2vS65FuSNi1ur6VkZ3lQvA-hmdYAGXePUZvyLcA2aGiAe01r2SOEtyRYvOORDj5gt8fsFsv2jmClHHCYrJGKiyvCzxfx96toz463w57F6UGoZRnVrDi5R9AqXzDL6UKNTTI1uGjV8-VqnnNWh6fh_36WyOT4D7kRVQu_odVs3gnHlBgXOur8zrNBEugCion5ivC_KYvRj7wCl6Kw2QkVWTvIdJzqKDFqbO8qHYFupvSw5ZiHyK9o6fciDyaMmWjjmXMzKxCbQOPWoXREkB9rf7MKoy7M1piY1MZ69abZ_bhrp3WBpy6EVRSXA_7qrZ5fFXqo3NfRBCg7favO7deMdPQZI3tvMlmcJlxC-qXPPcaM3sK-RlsToNm3dMGFT6E81EiCy4Ef1KsNwQK-se0duga9=w1920-h947">
+          <div class="text">Caption Text</div>
+        </div>
+        
+        <div class="mySlides fade">
+        <!--   <div class="numbertext">2 / 3</div> -->
+          <img src="https://lh3.googleusercontent.com/fife/AKsag4MKoCibz9ffSKL73juB7swrvynJboYcvCb6lUBEXC6yhQDlfFsY5AuQEcIm3XR-XQVW08m1p-NpyigHUlJlYnChnNc0WtbLOaYwUdxaU2mfc2-pHWHlylmGY5ujM7HMQHHaS3zw2_yfj1QOejkv32tvew6gQ-EVvGsAvpvrACJxnKcvQ6h5Rkqht6J38QL5DGQm7OjIX5L10SZ9oOsB47PG_RK3mmQXwQnzao9Lj3ACXUb_ACUl2NHEf8USymTVw72nf8ZqHhhTsZhpKhfT5GU9klmPdiGE0ozYQIYZzQwPytgVOeoxWBvEebfXBnEq6elp9X_lbagaEMr-sUP3sdgfiYQSjS99o-jDBRkVTTAUHJlP0eM-WBNwsfYiYVPqhh0W0iObSHDCeLev6k9TU5DsYNqicpYLsRdYyQeYEFTAmFWZrEloSVNs06EnUdbeO62uVQjWwAmlJJsNVkyR53RWsthDmqUN6OcAHg4Rxwe2f6-zB9PVvgGt_fswOq4PWZ8zhfn3V3zxBr_2xH4YoKSrroV66NyUv4Iu1Vgm0icKHhX91mPif81QXHHlh4nZ4yEEkBowY4pV9n_4JXi04tO3H4blp745VWjIR_vVH5huaKIDcaHE7bzNVTV9IUlRmWuS0dGfH2G0Q2-ROgBMVgMtpGn982xqjHe3NaGHaPkBVa84hmoFgtO3qGcX1syRMftwIT5o8BOxOPngIROU-wwThlQraBpVYzyUbmdqrQKRVHUEQa7ywpSuUDSkNaMykZYcatpOidoueV_GdUfuxB8-5WWI5oQniEj0D8yugKE7cIGX0TfJsLsCUbHuCxD8pvT893sGHZ6M50kbrbg5pqTxhEYcoF8FhjkLY51NP2ulkY7_pS408LIdRiUH9d_ozr0LZItNaj0whFzBvrkSFtnbKdj_tMWqGwt_PWtaNCsSFGo4E8STnpI3GVJDXM5Aqg4EbeHiI4ye0ygBl-6MOgDbjz7Gd8LqHy7a1IAVNNHsBCiyqIie6SAdo5ccMa-mQ0HyxT9SuXTpTS5Ic4t9lzOo1kQBwFvjb2VqCISb2LiR7Kj-JRHvDL2M5gkk6l1N5NJafHiJ2yM01y6dyvm3VzCuCYEcyohcFSNCkjVPNZOvOjk6Pj5NoQ6UpB7AyLr7jV9MBM3MxgBmAFwDpv2HvsfJt-INz8I16bz_UALYCN3qlbf34StU8bgYgK5w_KK_UPqF6CTLQbbeMJN6DQVbYJVpvfkJIK0Uz9jQmbXiITvFZG41m66yRYgNLILJIZMQOgkf7V7F0W6BztE51e4GPzfPje5sv3b8yWPqR3g817KvHL6mBbyHqyxkqXmBlRkH0lbXBT37FyOKc9z1nJZjH7ZiCSqxBNBz6R3UZ7JDFg7dLlLo7VC0TdzcXN_nNFm-1zgzlClBLSsekKNvLiwpeLg-eegs36nflcd6BfOA4BLkV3Ugqml70BN610C2hRPct4Czyy_kuFtn9S5iYaNWZu36Attp8SPnr6Kahbqoce6dzEHeYUCVlI9x4QDk0rWlM7OlWFC96cm8auFpE063CelLGAC0p5I53CpH8nUklLSQRRkH1wHSULrTuMvt-eLbBLyMe_ClmmAbbvfn8_KH-HFnK_ti=w1920-h947">
+          <div class="text">Caption Two</div>
+        </div>
+        
+        <div class="mySlides fade">
+        <!--   <div class="numbertext">3 / 3</div> -->
+          <img src="https://lh3.googleusercontent.com/fife/AKsag4M3MwEMibBT8pvIeNSZB9um8OKZTOADe6jlLCX88seKPd72Dl9MP-rkx2LNF7iMLX0Th6BwCvv_ornj0bZkVEPphRW_hTBGSkHoTYbjQkzhlx1mbO0J0eAVHJbP1sUpweVQIcDBfI3r4WmYTiWFPvFYr0PhH-ekUsZgt-oHLVwQS3oAkJyA8hMk7RVR80yIUTtin66dom5xDEgJ0XXX-_CnUsGehPcmmnsTckQtZFg58LtITHH3gnYnpKlSXQKsAOz3nl-6mOQ2VDiKk3eHhDH1mi2bslWpQ22vEJgwAoYNEwsdMsNz6XDVua4KS24pywCxfFyi5nYJaNaXf2alrEa9iSM9hD8ygssTZJlG7rCP1sDkiSLvS4qlpdIVAhiGJQopI0CGc7XsCx3ph8jDeNID6ZF6-upYoo0v5Iopd1g5oFupssCK2aV84I5SOp_WEyM75X-9JRMab4roxrOUC-khYdyt9e_dR2Ji8iYEUBTP8WdND4htMQvJ6e53iWKKI3-bfKbnLBI14kfe9E2jF0GulcoSBSAnT-ObMQA57_jmS2NwvRBnBr8ScvV3HyOwBA-jRXdSfeZKQnOs9Mh3VlGnm2Je3pxyGRVN8iz_aa5kLoBLc087Q3ZeVrM8MUgQYsyQSBnUioSWC3eRpR4Nhk0PplMmUP0zbq2tZ_vZ3RNzW1-9eIRubw4b8_9Wynz11HnBbjV_6kyv9GkrYZcGDBh7VE7ApKCCFk3qnigDF3NI4trSljimHVvZWSxCCyS9FLhEgeETgfkbBz1tYoQxU0vY27HfOHhrsbXWuQKlIz2xAqMPengavbA5b0Rf96IkIEEzHY-lXqFVSFQe57CWAMNkC8iHY4vANWxXAPRSjoYR0cRR8P0ymkU4qMOLBsM2WqLNU8YBfvUZZ26cXQPE_VmFoKjOUp425C1qhHHfh8_FEULMpiWJx9sAEGKfoIXBuFFmXVptkjnZSn5UNDlTbTbtrmpF9fC5Xjr77MT6OA6GEfo8xMbGyrvok3VkbB1im_9l0iNuxnEtB7fw4NqRiGbzrxuQhC_hivrH0rlpOdV7-vB5k7pbQiccbGbROPBcgkLhzw0h9DRWoJ1_GcO8IArJpO-ptZEWrp0Xmvw0IC5bHQ5dHyQrktcxfS4xlT3OBKT-He7kYOENEDw6Pu77iNfwvSml7M41-EzwMBc3b29rT9YhNeZlwlxflhPlxKQzqq7LuIUQrmoeZwxW31ZtP7HaWYPbAGMtm6PzjVKazQuL2IWvkiynhydXj6ed3oi3WFj_ONMdjyVO5fo2yvSXBuSbWIlklR41MvNcOQeqpF_tmaxHOAilACVbpWPGIzctYXYOemXZRII5H231rjBfbcgIZ17WyvQiFbZyGLPycGWIqLMTeMqG19qb68uO9BIr-CKulrzBe0k9BYpSGDYJ89dPRnkoeL48s73c2srk9maqCYOi1DRI5RVc8ArsKcueJC-WsO_rAItsYuvEneM_tAwFGvWldMwvJbx13zCCRi56NG6WbZd2YJIycyMSpn_hA2kmK_3b7ZlouqkF5RI620ekWAT8fUm-wlpqlqxKiVSlPsbrQXuGo0SMZbKDNGFOHXL-JBP9zrVFjwn2EqalnPmja7I4=w1920-h947">
+          <div class="text">Caption Three</div>
+        </div>
+        
+
+        </div>
+        <!-- <br> -->
+        
+        <div style="text-align:center; position: absolute; bottom: 20px; width: 100%;" class="dot-container">
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+        </div>
+        
+        <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
+
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+        </script>
+</body>
+</html>

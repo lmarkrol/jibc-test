@@ -1,0 +1,236 @@
+body {
+    font-family: 'Poppins', sans-serif;
+  }
+  
+
+.carousel {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 50px;
+    transform: scale(1);
+    padding: 10px;
+    
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.card {
+  flex: 0 0 auto;
+  width: 600px;
+  height: 200px;
+  margin-bottom: 20px;
+  border-top-left-radius: 98px;
+  border-bottom-left-radius: 98px;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  display: flex;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+  animation: gradientAnimationCard 2s infinite;
+}
+
+@keyframes gradientAnimationCard {
+  0% {
+    box-shadow: 0 0 10px rgba(231, 60, 126, 0.8);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 193, 7, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(238, 119, 82, 0.8);
+  }
+}
+
+
+/* .card:hover {
+  background-image: linear-gradient(45deg, #ffc107, #ffc107, #e73c7e, #ee7752, #ffc107, #ffc107);
+  background-size: 200% 200%;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; 
+  -webkit-background-clip: text; 
+  animation: gradient-animation 3s linear infinite;
+  font-weight: bolder;
+  font-family: "Poppins";
+  text-decoration: none;
+}
+
+      @keyframes gradient-animation {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    } */
+
+.card img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.card .column {
+    /* padding: 10px; */
+    top: 0;
+    margin-left: 20px;
+}
+
+.card a {
+    text-decoration: none;
+}
+
+.card h3 {  
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: -15px;
+    color: black;
+}
+
+.card h4 {  
+    font-style: italic;
+    color: #ffc107;
+}
+
+.card h5 {  
+    font-style: normal;
+    color: rgb(63, 63, 63);
+}
+
+.dot-indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.dot-indicator span {
+    width: 15px;
+    height: 15px;
+    margin: 0 4px;
+    border-radius: 50%;
+    background-color: white;
+    border: 1.5px solid rgba(77, 77, 77, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.dot-indicator span.active {
+    background-color: #ffc107;
+    border: 2px solid #ffc107;
+}
+
+.dot-indicator span:not(.active) {
+    background-color: white;
+    border: 1.5px solid rgba(77, 77, 77, 0.1);
+}
+
+.dot-indicator span:first-child.active ~ span {
+    display: none;
+}
+
+@media screen and (min-width: 769px) {
+  .carousel {
+    justify-content: center;
+    margin-top: -50px;
+  }
+
+  .card .column {
+    /* padding: 10px; */
+    transform: scale(0.9);
+    margin-top: -20px;
+    margin-left: 20px;
+}
+}
+
+@media screen and (max-width: 768px) {
+    .carousel {
+        overflow-x: scroll;
+        margin-top: -35px;
+        transform: scale(1);
+    }
+
+    .card {
+        width: 100%;
+        margin-right: 10px;
+        margin-bottom: 20px;
+        transform: scale(1);
+        transform-origin: center;
+        display: flex;
+        align-items: center;
+    }
+
+    .card img {
+        width: 200px;
+        height: 200px;
+        transform: scale(0.8);
+    }
+
+    .card .column {
+        padding: 0px;
+        margin-left: -10px; 
+        transform: scale(0.7);
+    }
+
+    .card h3 {  
+        margin-bottom: -15px;
+    }
+
+    .card h4 {  
+        margin-top: 0;
+    }
+
+    .dot-indicator.show-six span {
+        display: none;
+    }
+
+    .dot-indicator.show-six span:nth-child(-n+6) {
+        display: block;
+    }
+
+    .dot-indicator span {
+        width: 15px;
+        height: 15px;
+        margin: 0 4px;
+        border-radius: 50%;
+        background-color: white;
+        border: 1.5px solid rgba(77, 77, 77, 0.1);
+        transition: background-color 0.3s ease;
+    }
+
+    .dot-indicator.show-six span {
+        opacity: 1;
+    }
+
+    .dot-indicator.show-six span.active {
+        background-color: #ffc107;
+        border: 2px solid #ffc107;
+        transform: scale(1.2);
+    }
+
+    .dot-indicator.show-six span.active:before {
+        content: "";
+        display: block;
+        padding-bottom: 100%;
+    }
+}
+

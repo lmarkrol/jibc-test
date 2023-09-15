@@ -1,0 +1,55 @@
+body {
+    font-family: 'Poppins', sans-serif;
+  }
+  
+.opening-container {
+    display: flex;
+    align-items: center;
+}
+
+.opening-image {
+    flex: 2; /* Increase the flex value to allocate more space to the image */
+    max-width: 100%; /* Adjust the max-width for desktop view */
+    text-align: center;
+    margin-right: 20px; /* Add margin to create a wider gap */
+}
+
+.opening-image img {
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+}
+
+.opening-text {
+    flex: 3; /* Increase the flex value to allocate more space to the text */
+    padding: 30px; /* You can adjust the padding as needed */
+    text-align: justify;
+    font-size: larger;
+}
+
+@media (min-width: 600px) {
+    .opening-container {
+        margin-right: 100px;
+        margin-left: 100px;
+    }
+
+    .opening-text {        
+    max-width: 47%;
+    }
+}
+
+@media (max-width: 600px) {
+    .opening-container {
+        flex-direction: column; /* Change back to column layout for mobile */
+        align-items: center;
+    }
+
+    .opening-image {
+        max-width: 90%; /* Make the image responsive */
+        margin-right: 0; /* Remove margin for mobile view */
+    }
+
+    .opening-text {
+        padding: 30px; /* Reduce padding further for mobile */
+    }
+}

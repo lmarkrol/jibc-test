@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            .container {
+                display: flex;
+                align-items: center;
+            }
+    
+            .image {
+                flex: 1;
+                max-width: 50%; /* Adjust the max-width for desktop view */
+                text-align: center;
+            }
+    
+            .image img {
+                border-radius: 10px;
+                max-width: 100%;
+                height: auto;
+            }
+    
+            .description {
+                flex: 1;
+                padding: 20px; /* Reduce the padding to decrease the gap */
+                text-align: justify;
+                font-size: larger;
+            }
+    
+            @media (min-width:600px) {
+                .container {                    
+                margin-right: 100px;
+                margin-left: 100px;
+                }
+            }
+            @media (max-width: 600px) {
+                .container {
+                    flex-direction: column; /* Change back to column layout for mobile */
+                    align-items: center;
+                }
+    
+                .image {
+                    max-width: 100%; /* Make the image responsive */
+                }
+    
+                .description {
+                    padding: 10px; /* Reduce padding further for mobile */
+                }
+            }
+        </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="image">
+            <img src="https://lh3.googleusercontent.com/fife/AKsag4POHjMdGhCE5bsuGOOETjjMdf3q4M3PxV3Y99Nk7PF5-S8GHA1yhCGATKh_i5Ti3ayclWTu-Oo7N1AQo3Mq07W5ovhvgDY84Bi81ihfVIvtIsI8SQhXD425dYe6svGaN7RKK3aUcnwJXXMjdu1DoY7FiR8m31bKUGUZbEwLwEqYzLOD9Fl2LkYuJm4LlfMmB7jaRl8_0Clali8bJ1XDofMsRj6AYk0HrkCxn5YwVEIrLaQuaNJRzP1qw0qoBWUcGqFFXhV2hpIGu2I0yFe1VmCfchk4NlVntiyHa_AEHEtXlFE-Km0n__vIp5iMR-OIp7Lv7QCXMoclxvAWkZLpk89LR-dpO5FUK20wNc8CvMrZCQ3GA7I6brnWp1Gow8lv_dQFF9kpHcdrLVSS-NPXK3N_Q50wZKJ5vGJqGpIDZrOyG3AuMag8lQnE-3YmIDXc8GiXi3_wBuK2T8wwVDAU09Ab5hF3RoEwKNJN5zi2qDUBeT1UDjnDOi09JpjMhoXe9MLjbRczjaLStmdqAB0nm1RFY_-4_av880sM3LKW-vNmtqDRhthQE9-xW5xE19D9cQ5mitxJGJULpJHx5TmScJSdcOHf76OP9nHgAQrfX3FGZ7ir4xEqqiXqOWQQVTzRd_ZGtJV0HT5e9QJb4AEGhg9KnZGV8WPWZjAKLcz3_d9_oVab7JXC7miWgu_ZBIRzjmngUTXDIl5heucbOp_M6h2WtttlR8wRBYnfavh88L8feWLK9FwcB_QCO-L8yI8kDw8FxDphxYNAtSqlMTKc95jImmkvJmDiwJklKOWWH7Wa1_nhWkR1aGCtRtZJ3GTZE2_jGh9bFCuOEu6XcDAmvuYWa9yM1MZPZKBPYTsGVt-02iAPP9hrxzpvQ3QXOcg_iH2P3Is8iQPM7DW-bbDTJn3AiPfe9Rtqait0kDejQCrKobX3o5cUHy2pWvylL3qspNiCrk4zCECJTmPAv2_EZ_8thOGjDETis8BzOq2ymPH1mfIcrUPmCl0kez5CwsjT5gynINdqkqpU11VBZDFdmrvYEqvBs7vSEJnQ9pKmwYtoNpBXwdaG06pHdu5k5ITVsP793lhlka2X7HZrwISjq56yFercI1cpTUhdlGFN2GdoZozrLkqsbLdik5DsS1KfrQphYy2WA-WGO78PORWi1BBBfd5cniEBITuXGjH9opJtCDHJw5EBE5NEzW9MDOJao18Rvk_IBXrv-Q5pLRGlT37VtX8JOhuTPuUcdYxcN-lZvP0PLnJ6pZ8OFfX16fmXM7_UOLLghov1A-cocU6AoLpNKl6YeKalsTuAa6zks4m4m9_T0vmO8OZyFItGCjMKwShoq5Jt8hex-87Bv_ajUODr6G7FrAGG-ufVX22RMYXYeCdDcm4hM-ajTKgvSu1sjDMBQDKjbdaNuJ906jS4YARo2fPGs33pl1qkzInWyKSzsPJfHqyn9lofUlKGZEffgmpGQT07My7nyMNhPNQvUbfO1CgfMB3vf97rV3RBIQITR_S0HofaswpZ-jlPFJgqt2BIUbZSY7fIIba4FA-72oKGxdXCkPF2cVaIcWoNcPY8r6xp4PnDhL9iM7jbQFeoF_eAK25T0QeJaTqOnB_Kw2tvFvee=w1920-h947" 
+            alt="Image Description"
+            width="500px" height="400px"
+            >
+        </div>
+        <div class="description">
+            <div>
+                <h2>Welcome to JIBC</h2>
+<p>As we come together to worship Christ, we do so as a community of believers across space and time carrying on the praise of the One who has given us life, by sacrificing His own. We are glad you are here with us at Jakarta International Baptist Church (JIBC).</p>
+<p>Our purpose is to <b>glorify GOD</b></p>
+<p><b>upwardly</b> through <b>worship</b></p>
+<p><b>inwardly</b> through <b>discipleship</b></p>
+<p><b>outwardly</b> through <b>evangelism</b></p>
+<p><i>The Lord bless you and keep you; the Lord make His face shine on you and be gracious to you; the Lord turn His face toward you and give you peace.
+<br><b>(Numbers 6:24-26)</b></i></p>
+        </div>
+    </div>
+</body>
+</html>

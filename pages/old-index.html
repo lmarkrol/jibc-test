@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JIBC</title>
+
+</head>
+
+<body>
+
+
+<style>
+    /* Styles for desktop */
+    @media (min-width: 768px) {
+      .card-banner {
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        /* margin-bottom: -10%; */
+      }
+    }
+
+
+    .card-iframe-banner {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Styles for mobile */
+@media (max-width: 767px) {
+  .card-banner{
+    width: 100%;
+    height: 100vh;
+    overflow: auto; /* Enable scrolling if needed */
+  }
+
+  .card-iframe-banner {
+    width: 100%;
+    height: 100%; /* Set the iframe height to 100% */
+    border: none;
+  }
+}
+  </style>
+
+  <div class="card-banner">
+    <iframe class="card-iframe-banner" src="components/banner-slider.html"></iframe>
+  </div>
+
+
+</body>
+</html>
