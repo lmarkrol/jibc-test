@@ -13,6 +13,9 @@
     <link rel="stylesheet" type="text/css" href="css/schedule.css">
     <link rel="stylesheet" type="text/css" href="css/benelovence.css">
     <link rel="stylesheet" type="text/css" href="css/news.css">
+    <link rel="stylesheet" type="text/css" href="css/announcement.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
 </head>
 <body>
 <!-- slideshow -->
@@ -111,16 +114,84 @@
         <br>
 </div>
 
-<br>
-<div style="text-align: center;"><br>
-    <h1>Church Information</h1>
+<!-- <div style="text-align: center;"><br>
+    <h1>News</h1>
     <p style="font-size: larger;">The Latest News Update</p>
 </div>
 <div class="news-container">
     <div class="cardsm-slider" id="cardmSlider"></div>
+</div> -->
+<br>
+<div style="text-align: center;"><br>
+    <h1>Announcement</h1>
+    <p style="font-size: larger;">The Latest News Update</p>
+</div>
+<div class="announcement-container">
+    <div class="announZcement-slider" id="announcementSlider">
+        
+    </div>
 </div>
 
 
+
+<footer class="footer">
+    <div class="container-footer">
+        <div class="row-footer">
+            <div class="footer-col">
+                <h4>Church Contact</h4>
+                <ul>
+                    <li style="display: flex; align-items: center;"><i class="fa fa-address-book" style="font-size: large; color: grey;"></i>&emsp;<a href="#">+62 81234 567</a></li>
+                    <li style="display: flex; align-items: center;"><i class="fa fa-envelope" style="font-size: large; color: grey;"></i>&emsp;<a href="#">ministry.assistant@jibc.or.id</a></li>
+                    <li style="display: flex; align-items: center;"><i class="fa fa-map-marker" style="font-size: large; color: grey;"></i>&emsp;<a href="https://maps.app.goo.gl/BpW3eCWSFR5E1gwX6" target="_blank">Jl. Kemang Raya No. 7, 4<sup>th</sup> floor, Mampang Prapatan, South Jakarta 12730 </a></li>
+                </ul>
+            </div>            
+            <div class="footer-col">
+                <h4>Additional</h4>
+                <ul>
+                    <li><a href="#">Sermons</a></li>
+                    <li><a href="#">Devotional</a></li>
+                    <li><a href="#">Resources</a></li>
+                    <li><a href="#">Missions Faith Promise Giving</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Get in touch ;)</h4>
+                <div class="social-links">
+                    <a href="https://web.facebook.com/jibc.or.id" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.youtube.com/@jibconlineministry9158" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://api.whatsapp.com/send/?phone=628111767618&text&type=phone_number&app_absent=0" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Documents</h4>
+                <p style="text-align: justify; color: grey;">Weekly Church Bulletin and Sermons Slide :</p><br>
+                <a href="mailto:ministry.assistant@jibc.or.id" class="doc-button">Click Here</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="new_footer_area bg_color">
+    <div class="new_footer_top">
+      
+        
+        <div class="footer_bg">
+            <div class="footer_bg_one"></div>
+            <div class="footer_bg_two"></div>
+        </div>
+    </div>
+
+    <div class="copyright-text-wrap" style="color: gray; text-align: center; padding: 10px;">
+        &copy; <span id="currentYear"></span> Managed by
+        <a href="#" target="_blank" style="color: #ffc107; text-decoration: none; font-weight: bold;">Jakarta International Baptist Church</a>
+    
+        <script>
+            var currentYear = new Date().getFullYear();
+            document.getElementById("currentYear").innerHTML = currentYear;
+        </script>
+                                        </div>
+
+</div>
 
   <!-- Include the Firebase JavaScript SDK -->
   <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js"></script>
@@ -129,5 +200,6 @@
   <script type="module" src="js/opening.js"></script>
   <script type="module" src="js/cards.js"></script>
   <script type="module" src="js/news.js"></script>
+  <script type="module" src="js/announcement.js"></script>
 </body>
 </html>

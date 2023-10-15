@@ -1,6 +1,6 @@
 .slideshow-wrapper {
   position: relative;
-  width: 100%;
+  /* width: 100vw; */
   overflow: hidden;
   background-color: aquamarine;
 }
@@ -11,7 +11,7 @@
 
 .slideshow-container img {
   display: none;
-  width: 100%;
+  width: 100vw;
   height: 700px;
   position: absolute;
   top: 0;
@@ -106,7 +106,7 @@
     display: none;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: 250px;
     position: absolute;
     transition: opacity 1.2s ease-in-out;
